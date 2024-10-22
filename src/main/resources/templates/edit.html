@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование студента</title>
+</head>
+<header th:replace="index :: head"></header>
+<body>
+
+<div class="row">
+    <div class="col-md-12">
+        <form action="#" th:action="@{/save}" th:object="${student}" method="post">
+            <table>
+                <tr>
+                    <td>ID студента:</td>
+                    <td><input type="number" th:field="*{ID}" readonly="readonly"></td>
+                </tr>
+                <tr>
+                    <td>Имя студента:</td>
+                    <td><input type="text" th:field="*{firstName}"></td>
+                </tr>
+                <tr>
+                    <td>Фамилия студента:</td>
+                    <td><input type="text" th:field="*{lastName}"></td>
+                </tr>
+                <tr>
+                    <td>Город студента:</td>
+                    <td><input type="text" th:field="*{city}"></td>
+                </tr>
+                <tr>
+                    <td>Средний балл студента:</td>
+                    <td><input type="text" th:field="*{av}"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-primary" data-toggle="modal" aria-pressed="false"
+                                autocomplete="off">Отправить
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

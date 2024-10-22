@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Добавление студента</title>
+<header th:replace="index :: head"></header>
+<body>
+<div class="row">
+    <div class="col-md-12">
+        <form action="#" th:action="@{/save}" th:object="${student}" method="post">
+            <table>
+                <tr>
+                    <td>Имя студента</td>
+                    <td><input type="text" th:field="*{firstName}"></td>
+                </tr>
+                <tr>
+                    <td>Фамилия студента</td>
+                    <td><input type="text" th:field="*{lastName}"></td>
+                </tr>
+                <tr>
+                    <td>Средний балл</td>
+                    <td><input type="text" th:field="*{av}"></td>
+                </tr>
+                <tr>
+                    <td>Город</td>
+                    <td><input type="text" th:field="*{city}"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false"
+                                autocomplete="off">Отправить
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div style="text-align: center;">
+    <a href="/">
+        <button type="button" class="btn btn-info">Назад</button>
+    </a>
+</div>
+</body>
+</html>
